@@ -1,0 +1,55 @@
+.jrac_container{
+  margin-bottom: 1em;
+  display: inline-block;
+}
+
+.jrac_viewport{
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  height: 750px;
+  border: 5px dashed #999
+}
+
+.jrac_loading{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0
+}
+
+.jrac_crop{
+  position: absolute;
+  border: 2px solid #ff0;
+}
+
+.jrac_crop_drag_handler{
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  -ms-filter: "alpha(opacity=10)";
+  filter: alpha(opacity=10)
+}
+
+.jrac_zoom_slider .ui-slider-handle,
+.jrac_crop_drag_handler,
+.jrac_viewport img{
+  cursor: pointer
+}
+
+.jrac_viewport img {
+  border: 2px solid red;
+}
+
+.submit-action {
+  margin-top: 15px;
+}
+
+.cropper-form th {
+  vertical-align: middle;
+}
+/*background-image:url(images/viewport_background.gif);*/
