@@ -1,4 +1,4 @@
-(function($, window, document) {
+(function($) {
 
   var CropperTool = {
     init: function(options, element) {
@@ -146,12 +146,21 @@
       base.options.cropperFormContainer.append(base.options.cropperForm);
     },
 
+    fullInputName: function(name) {
+      var base = this;
+
+      if (base.options.cropperFormParameterGrouping && base.options.cropperFormParameterGrouping.length) {
+        return base.options.cropperFormParameterGrouping + '[' + name + ']'
+      } else {
+        return name;
+      }
+    },
+
     formInputsFor: function(name, value) {
       var base = this;
-      var fullName = base.options.cropperFormParameterGrouping + '[' + name + ']';
 
       var visibleFormElement = $('<input>', { type: 'text', 'class': name }).val(value).prop('disabled', true);
-      var hiddenFormElement = $('<input>', { type: 'hidden', 'class': name, name: fullName }).val(value);
+      var hiddenFormElement = $('<input>', { type: 'hidden', 'class': name, name: base.fullInputName(name) }).val(value);
 
       return [visibleFormElement, hiddenFormElement];
     },
@@ -164,9 +173,8 @@
       var base = this;
 
       var colorFormInput = base.formInputsFor('background_color', base.options.defaultBackgroundColor)[0];
-      var fullName = base.options.cropperFormParameterGrouping + '[background_color]';
 
-      colorFormInput.prop('disabled', false).prop('name', fullName);
+      colorFormInput.prop('disabled', false).prop('name', base.fullInputName('background_color'));
       colorFormInput.keyup(base.updateBackgroundColorFunc()).blur(base.updateBackgroundColorFunc());
 
       return colorFormInput;
@@ -247,6 +255,8 @@
       'Try to center best as your eye allows'
     ],
 
+    cropGuidelineCSSPath: false,
+
     //jrac attributes
     allowCropResize: false,
 
@@ -256,9 +266,7 @@
     allowViewportResize: true,
     viewportContentLeft: null,
     viewportContentTop: null,
-    viewportAfterLoadFunction: null,
-
-    cropGuidelineCSSPath: false
+    viewportAfterLoadFunction: null
   };
 
-})(jQuery, window, document);
+})(jQuery);
