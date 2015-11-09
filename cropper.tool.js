@@ -133,7 +133,7 @@
         base.rowForInput('Crop Height', base.formInputsFor('crop_height', base.options.cropHeight)),
         base.rowForInput('Resize Image Width To', base.formInputsFor('image_width', base.options.imageWidth)),
         base.rowForInput('Resize Image Height To', base.formInputsFor('image_height', base.options.imageHeight))
-      ]
+      ];
 
       $.each(coordinateRows, function(index, elem){ elem.toggle(base.options.showFormFields) });
 
@@ -212,7 +212,7 @@
         $(base.options.helpInformationContainer).append($('<ol>').append(lis));
       }
     }
-  }
+  };
 
   $.fn.cropperTool = function(options) {
     return this.each(function() {
@@ -228,7 +228,7 @@
 
       $.data(this, 'cropperTool', cropperTool);
     });
-  }
+  };
 
   $.fn.cropperTool.options = {
     cropperImageElement: null,

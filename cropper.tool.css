@@ -8,7 +8,7 @@
   overflow: hidden;
   width: 800px;
   height: 750px;
-  border: 5px dashed #999
+  border: 5px dashed #999;
 }
 
 .jrac_loading{
@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0
+  bottom: 0;
 }
 
 .jrac_crop{
@@ -32,7 +32,7 @@
   bottom: 0;
   opacity: 1;
   -ms-filter: "alpha(opacity=10)";
-  filter: alpha(opacity=10)
+  filter: alpha(opacity=10);
 }
 
 .jrac_zoom_slider .ui-slider-handle,
@@ -52,4 +52,3 @@
 .cropper-form th {
   vertical-align: middle;
 }
-/*background-image:url(images/viewport_background.gif);*/
